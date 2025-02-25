@@ -91,6 +91,7 @@ class Actor {
 }
 
 const deltaTime = 1 / 60;
+let keysPressed = [];
 const mouse = new Vector2();
 const actor = new Actor();
 actor.setPosition(new Vector2(viewport.clientWidth / 2, viewport.clientHeight / 2));
@@ -105,12 +106,14 @@ function tick() {
   actor.setRotation(angle);
 }
 
-function inputHandler(e) {
-
-}
-
 viewport.addEventListener("mousemove", (e) => {
   mouse.setVector(e.x, e.y);
 });
 
-viewport.addEventListener("keydown", inputHandler);
+viewport.addEventListener("keydown", (e) => {
+  keysPressed.push(e.code);
+});
+
+viewport.addEventListener("keyup", (e) => {
+  
+})
