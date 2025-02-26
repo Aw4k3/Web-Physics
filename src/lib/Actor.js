@@ -7,6 +7,18 @@ export default class Actor {
   size = new Vector2(64, 64);
   sprite = document.createElement("div");
   parent = viewport;
+  children = [];
+
+  constructor() {
+    this.setPosition(this.position);
+    this.setRotation(this.rotation);
+    this.setSize(this.size);
+    this.sprite.style.backgroundColor = "#FFF"
+    this.sprite.style.transformOrigin = "center";
+    this.sprite.style.translate = "-50% -50%";
+    this.parent.appendChild(this.sprite);
+    setInterval(() => this.tick(), engine.deltaTime * 1000);
+  }
 
   /**
    * @param {number} deg 
@@ -55,15 +67,5 @@ export default class Actor {
    */
   tick() {
     // Override this method
-  }
-
-  constructor() {
-    this.setPosition(this.position);
-    this.setRotation(this.rotate);
-    this.setSize(this.size);
-    this.sprite.style.transformOrigin = "center";
-    this.sprite.style.translate = "-50% -50%";
-    this.parent.appendChild(this.sprite);
-    setInterval(() => this.tick(), engine.deltaTime * 1000);
   }
 }
