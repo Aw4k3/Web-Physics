@@ -13,7 +13,7 @@ export default class Actor {
     this.setPosition(this.position);
     this.setRotation(this.rotation);
     this.setSize(this.size);
-    this.sprite.style.backgroundColor = "#FFF"
+    this.sprite.style.backgroundColor = "#FFF";
     this.sprite.style.transformOrigin = "center";
     this.sprite.style.translate = "-50% -50%";
     this.parent.appendChild(this.sprite);
@@ -21,7 +21,7 @@ export default class Actor {
   }
 
   /**
-   * @param {number} deg 
+   * @param {number} deg
    */
   rotate(deg) {
     this.rotation += deg;
@@ -63,9 +63,23 @@ export default class Actor {
   }
 
   /**
+   *
+   * @param {string} url
+   */
+  setSprite(url) {
+    this.sprite.style.background = `url("${url}")`;
+    this.sprite.style.backgroundSize = "contain";
+    this.sprite.style.backgroundRepeat = "no-repeat";
+  }
+
+  /**
    * @description This method is called every frame
    */
   tick() {
     // Override this method
+  }
+
+  destroy() {
+    this.parent.removeChild(this.sprite);
   }
 }

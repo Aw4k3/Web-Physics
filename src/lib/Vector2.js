@@ -51,6 +51,26 @@ export default class Vector2 {
     this.y += vector.y;
   }
 
+  /**
+   * 
+   * @param {Vector2} a 
+   * @param {Vector2} b 
+   * @returns VectorA + VectorB
+   */
+  static add(a, b) {
+    return new Vector2(a.x + b.x, a.y + b.y);
+  }
+
+  /**
+   * 
+   * @param {Vector2} a 
+   * @param {Vector2} b 
+   * @returns VectorA * VectorB
+   */
+  static multiply(a, b) {
+    return new Vector2(a.x * b.x, a.y * b.y);
+  }
+
   static lerp(a, b, t) {
     return new Vector2(a.x + (b.x - a.x) * t, a.y + (b.y - a.y) * t);
   }
