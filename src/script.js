@@ -6,6 +6,6 @@ const enemies = [];
 
 const player = new Rocket();
 
-// let enemy = new Enemy();
-// enemy.target = player;
-// enemies.push();
+let enemy = new Enemy();
+enemy.target = player;
+enemies.push();

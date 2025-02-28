@@ -71,6 +71,14 @@ export default class Actor {
     this.sprite.style.backgroundSize = "contain";
     this.sprite.style.backgroundRepeat = "no-repeat";
   }
+  getBoundingBox() {
+    return {
+      x: this.position.x - this.size.x / 2,
+      y: this.position.y - this.size.y / 2,
+      width: this.size.x,
+      height: this.size.y,
+    };
+  }
 
   /**
    * @description This method is called every frame

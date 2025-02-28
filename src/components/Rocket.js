@@ -1,5 +1,6 @@
 import Actor from "../lib/Actor.js";
 import engine from "../lib/Engine.js";
+import HitBox from "../lib/HitBox.js";
 import Vector2 from "../lib/Vector2.js";
 import Projectile from "./Projectile.js";
 
@@ -10,12 +11,15 @@ export default class Rocket extends Actor {
   bullets = [];
   firingCooldown = 0.25;
   isFiringOnCooldown = false;
+  hitBox = new HitBox(Vector2.vector2(0, 0), Vector2.vector2(this.size.x, this.size.y));
+  boundingBox = this.getBoundingBox();
 
   constructor() {
     super();
     this.setSprite("./assets/SpaceShip.png");
     this.setSize(new Vector2(100, 100));
     this.setPosition(new Vector2(engine.viewport.clientWidth / 2, engine.viewport.clientHeight / 2));
+    this.hitBox.showHitBox();
   }
 
   tick() {
@@ -58,5 +62,13 @@ export default class Rocket extends Actor {
         }, this.firingCooldown * 500);
       }
     }
+
+    // Update hitbox position
+    this.boundingBox = this.getBoundingBox();
+    this.hitBox.start = Vector2.vector2(this.boundingBox.x, this.boundingBox.y);
+    this.hitBox.end = Vector2.vector2(
+      this.boundingBox.x + this.boundingBox.width,
+      this.boundingBox.y + this.boundingBox.height
+    );
   }
 }
