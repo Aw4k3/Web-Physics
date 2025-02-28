@@ -6,11 +6,16 @@ class Engine {
   deltaTime = 1 / 60;
   keysPressed = [];
   isMouseDown = false;
-  cursorPosition = new Vector2();
+  cursorPosition = Vector2.vector2(0, 0);
+  resolution = Vector2.vector2(0, 0);
 
   constructor() {
+    this.resolution.x = this.viewport.clientWidth;
+    this.resolution.y = this.viewport.clientHeight;
+
     this.viewport.addEventListener("mousemove", (e) => {
-      this.cursorPosition.setVector(e.x, e.y);
+      this.cursorPosition.x = e.x;
+      this.cursorPosition.y = e.y;
     });
 
     this.viewport.addEventListener("keydown", (e) => {
@@ -30,6 +35,16 @@ class Engine {
     this.viewport.addEventListener("mouseup", () => {
       this.isMouseDown = false;
     });
+
+    this.viewport.style.background = `url("./assets/Background1.jpg")`;
+    // this.viewport.style.backgroundSize = "fill";
+    // this.viewport.style.backgroundRepeat = "no-repeat";
+
+    setInterval(() => this.tick(), this.deltaTime * 1000);
+  }
+
+  tick() {
+    
   }
 }
 
