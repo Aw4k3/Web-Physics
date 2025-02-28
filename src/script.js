@@ -4,6 +4,8 @@ import Rocket from "./components/Rocket.js";
 
 const enemies = [];
 
-new Rocket();
+const player = new Rocket();
 
-enemies.push(new Enemy());
+// let enemy = new Enemy();
+// enemy.target = player;
+// enemies.push();
