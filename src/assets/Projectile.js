@@ -1,6 +1,6 @@
-import Actor from "../lib/Actor.js";
-import HitBox from "../lib/HitBox.js";
-import Vector2 from "../lib/Vector2.js";
+import Actor from "../components/Actor.js";
+import HitBox from "../components/HitBox.js";
+import Vector2 from "../components/Vector2.js";
 
 export default class Projectile extends Actor {
   direction = new Vector2();
@@ -11,7 +11,7 @@ export default class Projectile extends Actor {
   constructor() {
     super();
     this.setSize(Vector2.multiply(Vector2.vector2(27, 11), Vector2.vector2(2, 2)));
-    this.setSprite("./assets/BlueLaser.png");
+    this.setSprite("./assets/textures/BlueLaser.png");
     this.hitBox.showHitBox();
   }
 

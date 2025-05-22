@@ -1,6 +1,5 @@
-import Enemy from "./components/Enemy.js";
-import Rocket from "./components/Rocket.js";
-
+import Enemy from "./assets/Enemy.js";
+import Rocket from "./assets/Rocket.js";
 
 const enemies = [];
 

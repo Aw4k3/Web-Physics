@@ -36,7 +36,7 @@ class Engine {
       this.isMouseDown = false;
     });
 
-    this.viewport.style.background = `url("./assets/Background1.jpg")`;
+    this.viewport.style.background = `url("./assets/textures/Background1.jpg")`;
     // this.viewport.style.backgroundSize = "fill";
     // this.viewport.style.backgroundRepeat = "no-repeat";
 

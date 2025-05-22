@@ -1,6 +1,6 @@
-import Actor from "../lib/Actor.js";
-import HitBox from "../lib/HitBox.js";
-import Vector2 from "../lib/Vector2.js";
+import Actor from "../components/Actor.js";
+import HitBox from "../components/HitBox.js";
+import Vector2 from "../components/Vector2.js";
 
 export default class Enemy extends Actor {
   /** @type {Actor} */
@@ -13,7 +13,7 @@ export default class Enemy extends Actor {
 
   constructor() {
     super();
-    this.setSprite("./assets/Savage.png");
+    this.setSprite("./assets/textures/Savage.png");
     this.hitBox.showHitBox();
   }
 

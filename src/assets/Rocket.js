@@ -1,7 +1,7 @@
-import Actor from "../lib/Actor.js";
-import engine from "../lib/Engine.js";
-import HitBox from "../lib/HitBox.js";
-import Vector2 from "../lib/Vector2.js";
+import Actor from "../components/Actor.js";
+import engine from "../components/Engine.js";
+import HitBox from "../components/HitBox.js";
+import Vector2 from "../components/Vector2.js";
 import Projectile from "./Projectile.js";
 
 export default class Rocket extends Actor {
@@ -16,7 +16,7 @@ export default class Rocket extends Actor {
 
   constructor() {
     super();
-    this.setSprite("./assets/SpaceShip.png");
+    this.setSprite("./assets/textures/SpaceShip.png");
     this.setSize(new Vector2(100, 100));
     this.setPosition(new Vector2(engine.viewport.clientWidth / 2, engine.viewport.clientHeight / 2));
     this.hitBox.showHitBox();

@@ -1,5 +1,5 @@
-import engine from "./Engine.js";
-import Vector2 from "./Vector2.js";
+import engine from "../components/Engine.js";
+import Vector2 from "../components/Vector2.js";
 
 export default class Actor {
   position = new Vector2();
